@@ -5,6 +5,10 @@ import "./App.css";
 
 // Logo has already been provided for you. Do the same for the remaining components
 import Logo from "./components/DisplayComponents/Logo";
+import Display from "./components/DisplayComponents/Display";
+import NumberButton from "./components/ButtonComponents/NumberButtons";
+import OperatorButton from "./components/ButtonComponents/OperatorButtons";
+import SpecialButton from "./components/ButtonComponents/SpecialButtons";
 
 function App() {
   // STEP 5 - After you get the components displaying using the provided data file, write your state hooks here.
