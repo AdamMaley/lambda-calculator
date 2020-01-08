@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { specials, operators, numbers } from "../../data";
 import math from "../math";
 import "./Calculator.scss"
@@ -27,11 +27,11 @@ export default function Calculator() {
     }
 
     useEffect(() => {
-        window.addEventListener("keydown", handleKeyDown)
+        window.addEventListener('keydown', handleKeyDown)
         return () => {
-            window.removeEventListener("keydown", handleKeyDown);
+           window.removeEventListener('keydown', handleKeyDown)
         };
-    }, [display]);
+    }, [display])
 
     const addToMathString = (e) => {
         console.log(e.target);

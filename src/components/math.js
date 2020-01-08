@@ -1,4 +1,4 @@
-import { create, all } from "math.js";
+import { create, all } from "mathjs";
 
 const config = {
     epsilon: 1e-12,
