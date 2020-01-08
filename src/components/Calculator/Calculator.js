@@ -12,7 +12,7 @@ export default function Calculator() {
         e.preventDefault();
         console.log(e);
         const key = e.key;
-        const value = [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-', '*', '/', '.', 'Enter', 'Backspace'];
+        const values = [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-', '*', '/', '.', 'Enter', 'Backspace'];
         if(values.includes(key)){
             if (key === "Enter"){
                 const solution = math.evaluate(display)
@@ -31,7 +31,7 @@ export default function Calculator() {
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, [display])
+    }, [display]);
 
     const addToMathString = (e) => {
         console.log(e.target);
@@ -57,14 +57,14 @@ export default function Calculator() {
                     <section className="col-1">
                         {specials.map((special, idx) => {
                             return (
-                                <button value={specials} className="button" id="specials">
+                                <button onClick={specialClick} key={idx} value={specials} className="button" id="specials">
                                     {special}
                                 </button>
                             );
                             })}
                         {numbers.map((num, idx) => {
                             return (
-                                <button value={num} className="button">
+                                <button onClick={(e) => addToMathString(e)} value={num} className="button">
                                     {num}
                                 </button>
                             );
@@ -73,8 +73,8 @@ export default function Calculator() {
                     <section className="col-2">
                         {operators.map((operator, idx) => {
                             return(
-                                <button key={idx} value={operator.value}
-                                className="operator-button">
+                                <button key={idx} onClick={addToMathString}value={operator.value}
+                                className="opButton">
                                     {operator.char}
                                 </button>
                             );
